@@ -1,28 +1,24 @@
-# Khóa JavaScript Basic:
+# Nghiên cứu về Redux
+
+---
+Github : https://github.com/yugiking0/Learn-Redux
+
+- Xem [Page Redux](https://yugiking0.github.io/Learn-Redux/)
 
 ---
 
-https://github.com/yugiking0/f8.javascrip.basic/tree/develope
+## Bài 001: Thư viện 30 dòng giống Redux - F8
 
-- Xem [F8 phần nội dung Promise](https://yugiking0.github.io/f8.javascrip.basic/f8)
+- Xem [Thư viện 30 dòng giống Redux](./detail/001-fake-redux/index.md)
 
----
-
-
-## Phần 01 : Giới thiệu
-
-### Bài 001: Lời khuyên trước khóa học
-
-- Xem [Lời khuyên trước khóa học](./detail/phan01-001/index.md)
-
-### Bài 002: Cài đặt môi trường
+## Bài 002: Cài đặt môi trường
 
 - Cài trình duyệt Browser Chrome
 - Code Editor `VS Code` + Extension `Liver Server`
 
 ---
 
-### Bài 094: Fetch dữ liệu
+## Bài 094: Fetch dữ liệu
 
 - Xem mục [Fetch dữ liệu](./detail/phan05-094/index.md)
 
