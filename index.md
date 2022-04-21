@@ -14,7 +14,7 @@ Github : https://github.com/yugiking0/Learn-Redux
 ## Bài 001: Thư viện 30 dòng giống React + Redux - F8
 
 - Xem [Thư viện 30 dòng giống React + Redux](./detail/001-fake-redux/index.md)
-- [Demo](./detail/001-fake-redux/demo/index.html)
+- [Demo](./detail/001-fake-redux/note_demo/index.html)
 
 ![Fake-redux](./detail/001-fake-redux/images/redux_flow-04.png 'Fake-redux')
 
