@@ -2,7 +2,7 @@
 
 ---
 1.  [Store](./store.md)
-1.  [View](./view.md.md)
+1.  [View](./view.md)
 
 ## 1. Nội dung
 
