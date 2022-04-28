@@ -1,6 +1,8 @@
 # Thư viện 30 dòng giống Redux - F8
 
 ---
+1.  [Store](./store.md)
+1.  [View](./view.md.md)
 
 ## 1. Nội dung
 
