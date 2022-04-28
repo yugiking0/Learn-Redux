@@ -47,14 +47,19 @@
   - Reducers
   - Store
 
-- **View** : Thành phần hiển thị giao diện cho User có thể tương tác trên đó.
-- **Actions** : Thành phần này sẽ chứa các mô tả những hành động xử lý( tại đây không thực hiện hành động thao tác).
+- **VIEW** : Thành phần hiển thị giao diện cho User có thể tương tác trên đó.
+- **ACTIONS** : Thành phần này sẽ chứa các mô tả những hành động xử lý( tại đây không thực hiện hành động thao tác).
+  - **Actions** chỉ là một object với một thuộc tính 'type'. Ngoài ra các thông tin khác trong object đó được coi như là dữ liệu kèm theo.
   - Được hiểu như tập hợp các mô tả về hành động, đơn giản là các events. Xem mục .....
 - **Dispatch** : Giữa `View` và `Actions` sẽ có liên kết gọi là `Dispatch`. `Dispatch` là ghi nhận thao tác của người dùng tác động lên giao diện View.
   - Khi người dùng `dispatch` trên `View`, thì luồng dữ liệu sẽ truy cập vào `Actions` lấy ra mô tả hành động `action` tương ứng, sau đó chuyển thông tin `action` này sang `Reduce` xử lý.
 - **state** : Là trạng thái dữ liệu và được lưu ở `store`.
-- **Store** : Thành phần lưu các trạng thái `state` ứng dụng, tại đây chỉ có chức năng getValue(state).
-- **Reducers** : Thành phần chứa các `function` nguyên thủy `reduce`, chúng lấy `state` hiện tại của app, thực hiện một xử lý và trả về một `state` mới lưu vào `store`.
+- **STORE** : Thành phần lưu các trạng thái `state` ứng dụng, tại đây chỉ có chức năng getValue(state).
+- **REDUCERS** : Thành phần chứa các `function` nguyên thủy(`pure function`) gọi là `reduce`;
+  - 1 – Trước hết các hàm phải là pure function – Nghĩa là hàm phải trả về cùng một kết quả với đầu vào là như nhau
+  - 2 – Nó nên là no side effect – không sử dụng các biến Global, sử dụng gọi bất đồng bộ hoặc phải đợi sử dụng promise để nhận kết quả trả về.
+- **reduce** là một hàm nhận đối số đầu vào là `State hiện tại` và thông tin `Action`, sau đó trả về một `State mới` để cập nhật vào `store`.
+  - `Predictable`, tức là cùng 1 state, cùng 1 action thì nó luôn luôn cho ra 1 state mới giống nhau, luôn luôn là như vậy.
 - **subscribe** : Sau khi `Store` được update do có thêm `state` mới sau xử lý `reduce`, thì thành phần `view` cần được update lại, khi này sẽ dùng chức năng `subscribe`. Ta có thể gọi đây là chức năng `Render` dữ liệu từ `Store` cho `VIEW`.
 
 ![Redux Flow](./images/redux_flow-04.png 'Redux Flow')
