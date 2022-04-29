@@ -10,6 +10,9 @@ Github : https://github.com/yugiking0/Learn-Redux
 - Xem [Page Redux](https://yugiking0.github.io/Learn-Redux/) : https://yugiking0.github.io/Learn-Redux/
 
 ---
+## Bài 001: Sơ lược về React 
+
+- Xem [Tìm hiểu sơ lược về ReactJS](./detail/001-reactjs-keys/index.md)
 
 ## Bài 001: Thư viện 30 dòng giống React + Redux - F8
 

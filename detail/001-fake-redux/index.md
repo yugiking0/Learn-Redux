@@ -3,6 +3,7 @@
 ---
 1.  [Store](./store.md)
 1.  [View](./view.md)
+1.  [View](./view.md)
 
 ## 1. Nội dung
 
@@ -19,6 +20,7 @@
     - Reducers
     - Dispatch
     - Component
+    - Props
     - Pure function
     - ...
 
