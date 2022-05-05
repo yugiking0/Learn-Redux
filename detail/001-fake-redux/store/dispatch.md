@@ -56,3 +56,63 @@ function createStore(reducer) {
 ```
 
 ![Xử lý Render](../images/002.png 'Xử lý Render')
+
+2.3 Hàm dispatch
+
+- Khi bắt sự kiện onclick nó sẽ gọi dispatch sẽ truyền 1 action và value
+
+```html
+<button onclick="dispatch('ADD', 'Porsche')">Add car</button>
+```
+
+- Khi dispatch được chạy nó sẽ gọi reducer, nó lấy giá trị state có giá trị từ lần trước đó là BMW, nó đẩy ngược vào state làm đối số đầu vào.
+
+```js
+dispatch(action, ...args) {
+    state = reducer(state, action, args)
+    render()
+}
+```
+
+- Và nó đẩy action sang, dữ liệu mới sang (args)
+
+- Trong reducer, ta lai bắt trường hợp nếu mà action là 'ADD' thì ta lấy ra dữ liệu mới từ args là newCar
+
+```js
+case 'ADD':
+  const [newCar] = args
+  return {
+      ...state,
+      cars: [...state.cars, newCar]
+  }
+```
+
+- Và ta return lại 1 object mới, nhưng object mới lại được tạo ra từ object cũ và nó chỉ sửa cars bằng cách thêm newCar vào cuối mảng thôi.
+
+- Nó thỏa mãn điều kiện là nhận state cũ và nó chỉnh sửa rồi nó đẩy ra state mới.
+
+- state mới được đẩy ra rồi, nó gọi lại hàm render()
+
+```js
+function render() {
+  for (const [root, component] of roots) {
+    // component là những thành phần chứa view.
+    const output = component();
+    root.innerHTML = output;
+  }
+}
+```
+
+- Hàm render() được gọi lại thì nó lại gọi component(), và component() lại là App.
+
+- Để gọi App thì lại phải thông qua connector => lại thông qua connect() và cuối cùng nó lại vòng lại và lấy được state mới.
+
+```js
+connect((selector = (state) => state));
+```
+
+- Vì state được update mới ở đây (dòng dưới) rồi, nó lại vòng lên connect trên nó lấy lại state mới => view bên html`` nhận được ô tô mới và nó render lại.
+
+```js
+state = reducer(state, action, args);
+```

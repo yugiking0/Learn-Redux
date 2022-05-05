@@ -1,7 +1,6 @@
-Hàm `Render`
-
+# Hàm `Render`
+---
 ![Xử lý Render](../images/002.png 'Xử lý Render')
-
 
 - Lúc này ta cần viết 1 hàm xử lý render dữ liệu từ Biến `roots` lưu các gốc Element chuyển thành các component ở View thông qua DOM như sau:
 

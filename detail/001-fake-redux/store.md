@@ -118,7 +118,7 @@ function createStore(reducer){
 
 ### 2.2 Hàm `Render`
 
-- Xem [Hàm Render](./store/renderFn.md.md)
+- Xem [Hàm Render](./store/renderFn.md)
 
 ### 2.3 Phương thức `attach`
 

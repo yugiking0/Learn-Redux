@@ -1,4 +1,7 @@
-Phương thức `attach`
+# Phương thức `attach`
+---
+
+![Phương thức attach](../images/attach.png 'Phương thức attach')
 
 - Ban đầu đối tượng roots chưa có dữ liệu, nên cần xây dựng 1 hàm đẩy dữ liệu tương ứng từng component và root vào roots như sau:
 
@@ -38,3 +41,4 @@ function createStore(reducer) {
   }
 }
 ```
+- Sau khi Roots có dữ liệu, thì dùng hàm render hiển thị kết quả lên VIEW.
