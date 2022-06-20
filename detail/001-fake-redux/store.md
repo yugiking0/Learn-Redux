@@ -34,7 +34,7 @@ function createStore(reducer){
 - (2) Component Show: Hiển thị và điều chỉnh trạng thái
 - (3) Component Filter: Lọc các trạng thái
 
-- Khi này xây dựng file `index.html` phần body sẽ tạo tưng ứng những `Root` thành phần gốc tương ứng với `Component` như sau:
+- Khi này xây dựng file `index.html` phần body sẽ tạo tương ứng những `Root` thành phần gốc tương ứng với `Component` như sau:
 
 ```html
 <!DOCTYPE html>

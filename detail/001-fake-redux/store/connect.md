@@ -22,7 +22,8 @@ function connect(selector = state => state){
 ```js
 function connect(selector = (state) => state) {
   // selector chọn các thành phần state, bình thường sẽ lấy tất cả state
-  return (component) => (props, ...args) =>
+  return (component) =>
+    (props, ...args) =>
       component(Object.assign({}, props, selector(state), ...args));
 }
 ```
@@ -30,7 +31,6 @@ function connect(selector = (state) => state) {
 - `selector = state => state` là một hàm nhận cái gì trả ra cái đó, làm vậy để dòng dưới `selector(state)` -> nhận state sẽ trả ra state, mặc định là vậy. Làm như này thì trong trường hợp em không muốn mặc định components sẽ nhận được cả object state nữa thì em chỉ cần truyền cho "selector" một hàm mới, hàm này sẽ nhận state và trả ra cái gì là tùy
 
 - `selector = state => state` chính là `selector = function (state ) { return state}`
-
 
 ```js
 function connect(selector = (state) => state) {
@@ -55,7 +55,7 @@ function connect(selector = state => state){
 
 ```js
 connect(selector = (state) => state) {
-    return (component) => 
+    return (component) =>
       (props,args) => //props,args sẽ được nhận khi có đối số ở lần call thứ 3 bên dưới
             component(Object.assign({}, props, selector(state), ...args));
 }
@@ -65,7 +65,29 @@ connect()(App)() => App(Object.assign({}, undefined, selector(state), undefined)
 
 ```
 
-> Giải thích đoạn này:
+> Giải thích đoạn `return component` này:
+
+![Return component](../images/connect_code.png 'Return component')
+
+```js
+function helloWorld(str) {
+  return console.log(str + ' Javascript!');
+}
+
+function connect() {
+  return (component) => {
+    console.log('Hello World');
+    return component('Xin chào');
+  };
+}
+
+const connector = connect();
+connector(helloWorld);
+connect()(helloWorld); // Giống đoạn code trên
+
+// Hello World
+// Xin chào Javascript!
+```
 
 Các bạn có thể biến nó thành đoạn code sau:
 
