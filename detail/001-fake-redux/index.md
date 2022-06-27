@@ -3,7 +3,7 @@
 ---
 1.  [View](./view.md)
 1.  [CreateStore](./store.md)
-1.  [View](./view.md)
+1.  [Run](./run.md)
 
 ## 1. Nội dung
 
