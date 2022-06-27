@@ -1,4 +1,4 @@
-# Nghiên cứu về Redux------------
+# Nghiên cứu về Redux
 ------------
 
 ---
@@ -27,7 +27,6 @@ Github : https://github.com/yugiking0/Learn-Redux
 
 - Xem [Sử dụng thư viện tạo Todo App](./detail/001-fake-redux/index.md)
 - [Demo](./detail/001-fake-redux/demo/index.html)
-- [Demo2](./detail/001-fake-redux/demo/index2.html)
 
 ![Todo app template](./detail/002-todo-app/images/todo-app.png 'Todo app template')
 

@@ -2,6 +2,14 @@
 
 ---
 
+- [Demo](./note_demo/index2.html)
+Các file: 
+1. [Demo](./note_demo/core.js)
+1. [Demo](./note_demo/reducer.js)
+1. [Demo](./note_demo/store.js)
+1. [Demo](./note_demo/script.js)
+1. [Demo](./note_demo/component.js)
+
 ## 1. Tạo Reducer.js
 
 ```js
@@ -35,14 +43,39 @@ export { attach, connect };
 ## 3. Viết lại main.js
 
 ```js
-import { attach, connect } from './store.js';
-import App from './app.js';
+import doApp from './App.js';
+import { attach } from './store.js'; // Lấy dữ liệu từ store ra VIEW
 
-attach(App(), document.getElementById('root'));
+// attach(component, root){ // Sẽ đẩy các thành phần component vào root
+// attach(() => `<h1>Hello World!!!</h1>`, document.getElementById('root'));
+
+attach(doApp, document.getElementById('root'));
 ```
 
 ## 4. Tạo App.js
 
 ```js
+// Viết component thay cho dùng:
+// attach(component, root){ // Sẽ đẩy các thành phần component vào root
+// attach(() => `<h1>Hello World!!!</h1>`, document.getElementById('root'));
+import html from './core.js';
+import { connect } from './store.js';
 
+// const connector = connect(state=>({
+//   car: state.car[0],
+//   cars: state.cars
+// }));
+
+const connector = connect();
+
+function appComponent(props) {
+  console.log('props::', props);
+  return html`
+    <ul>
+      ${props.cars.map((car) => `<li>${car}</li>`)}
+    </ul>
+    <button onclick="dispatch('ADD', 'PORSCHE')">Add car</button>
+  `;
+}
+export default connector(appComponent);
 ```
