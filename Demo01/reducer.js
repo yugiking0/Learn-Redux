@@ -5,6 +5,7 @@ var init = {
 export default function reducer(action, state = init, ...args) {
   console.log(action);
   switch (action) {
+
     case 'ADD': // action add, edit, delete...
       let [newCar] = args;
       return {
