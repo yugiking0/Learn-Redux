@@ -53,8 +53,8 @@ export function createStore(reducer){
   function render(){
     // Vòng lặp qua roots để chuyển ra VIEW
     for(const [root, component] of roots){
-      console.log(root);
-      console.log(component);
+      // console.log(root);
+      // console.log(component);
       const output = component(); // Callback html() ra chuỗi 
       root.innerHTML = output; // Gán chuỗi html vào element #root để hiển thị
     }
