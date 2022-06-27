@@ -3,7 +3,8 @@
 ---
 
 - [Demo](./note_demo/index2.html)
-Các file: 
+  Các file:
+
 1. [core](./note_demo/core.js)
 1. [reducer](./note_demo/reducer.js)
 1. [store](./note_demo/store.js)
@@ -13,12 +14,29 @@ Các file:
 ## 1. Tạo Reducer.js
 
 ```js
-const init = {
-  cars: ['BMW'],
+// DATA
+var init = {
+  cars: ['toyota', 'honda', 'porsche'],
 };
 
-export default function reducer(state = init, action, args) {
+// reducer.js getDATA and createACTIONs
+export default function reducer(action, state = init, ...args) {
+  console.log(action);
   switch (action) {
+    case 'ADD': // action add, edit, delete...
+      let [newCar] = args;
+      return {
+        cars: [...state.cars, newCar],
+      };
+      break;
+    case 'DEL': // action add, edit, delete...
+      const index = args[0];
+      console.log('args::', index, state);
+      if (index > -1) {
+        state.cars.splice(index, 1); // 2nd parameter means remove one item only
+      }
+      return state;
+      break;
     default:
       return state;
   }
@@ -69,13 +87,17 @@ import { connect } from './store.js';
 const connector = connect();
 
 function appComponent(props) {
-  console.log('props::', props);
   return html`
+    <h1>Todo App</h1>
     <ul>
-      ${props.cars.map((car) => `<li>${car}</li>`)}
+      ${props.cars.map(
+        (car, index) =>
+          `<li>${car} <button onClick = "dispatch('DEL', '${index}')" >Xóa</button> </li>`
+      )}
     </ul>
-    <button onclick="dispatch('ADD', 'PORSCHE')">Add car</button>
+    <button onClick="dispatch('ADD','DuyDQ')">Thêm</button>
   `;
 }
+
 export default connector(appComponent);
 ```
