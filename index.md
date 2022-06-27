@@ -39,6 +39,7 @@ Github : https://github.com/yugiking0/Learn-Redux
 
 - Xem [Thư viện 30 dòng giống Redux](./detail/001-fake-redux/index.md)
 - [Demo](./detail/001-fake-redux/demo/index.html)
+- [Demo2](./detail/001-fake-redux/demo/index2.html)
 
 ## Bài 004: Mô hình Flux
 
