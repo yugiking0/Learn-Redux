@@ -4,11 +4,11 @@
 
 - [Demo](./note_demo/index2.html)
 Các file: 
-1. [Demo](./note_demo/core.js)
-1. [Demo](./note_demo/reducer.js)
-1. [Demo](./note_demo/store.js)
-1. [Demo](./note_demo/script.js)
-1. [Demo](./note_demo/component.js)
+1. [core](./note_demo/core.js)
+1. [reducer](./note_demo/reducer.js)
+1. [store](./note_demo/store.js)
+1. [script](./note_demo/script.js)
+1. [component](./note_demo/component.js)
 
 ## 1. Tạo Reducer.js
 
