@@ -1,7 +1,7 @@
 import html from "./core";
 import { connect } from "./store";
 
-const connect = connect(state=>({
+const connector = connect(state=>({
   car: state.car[0],
   cars: state.cars
 }));
@@ -13,3 +13,5 @@ function app({pops}){
   </ul>
   `
 }
+
+export default connector(app)

@@ -14,10 +14,13 @@ const connector = connect();
 function appComponent(props) {
   console.log('props::', props);
   return html`
+    <h1>Todo App</h1>
     <ul>
-      ${props.cars.map((car) => `<li>${car}</li>`)}
+      ${props.cars.map((car,index) => `<li>${car} <button onClick = "dispatch('DEL', '${index}')" >Xóa</button> </li>`)}
     </ul>
-    <button onclick="dispatch('ADD', 'PORSCHE')">Add car</button>
+    <button onClick= "dispatch('ADD','DuyDQ')" >Thêm</button>
   `;
 }
+
+
 export default connector(appComponent);
