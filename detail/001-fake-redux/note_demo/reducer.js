@@ -3,7 +3,8 @@ var init = {
 };
 
 export default function reducer(action, state = init, ...args) {
-  console.log(action);
+  console.log("action::",action);
+  console.log("state::",state);
   switch (action) {
     case 'ADD': // action add, edit, delete...
       let [newCar] = args;

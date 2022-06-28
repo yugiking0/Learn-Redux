@@ -53,8 +53,8 @@ export function createStore(reducer){
   function render(){
     // Vòng lặp qua roots để chuyển ra VIEW
     for(const [root, component] of roots){
-      // console.log(root);
-      // console.log(component);
+      console.log("root::",root);
+      console.log("component::",component);
       const output = component(); // Callback html() ra chuỗi 
       root.innerHTML = output; // Gán chuỗi html vào element #root để hiển thị
     }
@@ -63,17 +63,20 @@ export function createStore(reducer){
   // Trả về Object gồm các phương thức để xử lý ra View
   return {
     // 1. Phương thức đẩy component vào Root element
-    attach(component, root){ // Sẽ đẩy các thành phần component vào root
+    attach(component, root) {
+      // Sẽ đẩy các thành phần component vào root
       // Gán vào roots gốc theo key là root
-      roots.set(root,component);
+      roots.set(root, component);
       render(); // Sau khi gán xong sẽ render ra view luôn
     },
     // 2. Lọc các state thích hợp chuyển qua View
-    connect(selector = state=>state){// selector chọn các thành phần state, bình thường sẽ lấy tất cả state
+    connect(selector = (state) => state) {
+      // selector chọn các thành phần state, bình thường sẽ lấy tất cả state
       // Mặc định sẽ là state mặc định luôn.
-      return component=>(props, ...args)=>
-        component(Object.assign({},props,selector(state), ...args))
-        // Merge các đối tượng vào Object gán vào
+      return (component) =>
+        (props, ...args) =>
+          component(Object.assign({}, props, selector(state), ...args));
+      // Merge các đối tượng vào Object gán vào
     },
 
     // 3. Dispatch : Thao tác người dùng tác động trên VIEW sẽ đẩy hành động
@@ -81,12 +84,11 @@ export function createStore(reducer){
     /**
      * reducer: hiểu tương tự như reduce sẽ truyền vào giá trị ban đầu, biến đổi và tạo thành giá trị tích trữ mới.
      */
-    dispatch(action,...args){
-      state = reducer(state, action, args); // reducer xem như callback
+    dispatch(action, ...args) {
+      state = reducer(action, state, args); // reducer xem như callback
       // Tạo state mới từ state cũ, action và các tham số khác.
       // state được thay đổi mới -> store sẽ được update lại, và cần VIEW thay đổi lại.
       render(); // Update lại VIEW
-    }
-
-  }
+    },
+  };
 }
