@@ -10,6 +10,7 @@ Github : https://github.com/yugiking0/Learn-Redux
 - Xem [Page Redux](https://yugiking0.github.io/Learn-Redux/) : https://yugiking0.github.io/Learn-Redux/
 
 ---
+- Xem [Function & CallBack](./detail/001-fake-redux/function-callback.md)
 
 ## Bài 001: Thư viện 30 dòng giống React + Redux - F8
 
