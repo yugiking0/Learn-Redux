@@ -20,6 +20,7 @@ Github : https://github.com/yugiking0/Learn-Redux
 ## Bài 001: Thư viện 30 dòng giống React + Redux - F8
 
 - Xem [Thư viện 30 dòng giống React + Redux](./detail/001-fake-redux/index.md)
+
 - [Demo](./detail/001-fake-redux/note_demo/index.html)
 - [Demo2](./Demo01/index.html)
 
@@ -27,7 +28,8 @@ Github : https://github.com/yugiking0/Learn-Redux
 
 ## Bài 002: Sử dụng thư viện trên
 
-- Xem [Sử dụng thư viện tạo Todo App](./detail/001-fake-redux/index.md)
+- Xem [Sử dụng thư viện tạo Todo App](.\detail\002-todo-app\index.md)
+
 - [Demo](./detail/001-fake-redux/demo/index.html)
 
 ![Todo app template](./detail/002-todo-app/images/todo-app.png 'Todo app template')
